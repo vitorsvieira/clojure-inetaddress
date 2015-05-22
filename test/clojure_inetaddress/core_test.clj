@@ -7,11 +7,6 @@
 (def loopback (loopback-address))
 (def git (by-name "github.com"))
 
-
-(canonical this-host)
-(reachable? (by-name "server-in-my-lan") 1000)
-(localhost)
-
 (deftest inetaddress-test
  (is (true? (instance? (type (byte-array 10)) (address this-host))))
  (is (true? (instance? Inet4Address (by-address (address this-host)))))
